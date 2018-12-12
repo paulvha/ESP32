@@ -5,10 +5,15 @@ The softserial from Jdollar could not be compile. Once that fixed it hang and pa
 on Sparkfun ESP32 Thing. Unfortunately one can not provide issues on the github and the code is now 2 years old.
 
 A number of changes have been applied to make it work.
+
 . only enableRX after the speed is set to prevent "hang"
+
 . The disable of interrupts has been implemented that it really works on an ESP32 during RX and TX
+
 . The timing for bit-banging RX has been adjusted to be more accurate
+
 . The reset for GPIO detected interrups now works
+
 . Added yield() for low baudrate in the wait during TX
 
 MAKE SURE TO ADJUST the following in cores ESP.cpp. it must be set for IRAM_ATTR as it is called during
