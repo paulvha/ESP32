@@ -1,4 +1,4 @@
-Based on the softserial from https://github.com/jdollar/espsoftwareserial, which in turn is based on the SoftSerial from the ESP8266 and Arduino
+Based on the softserial from https://github.com/jdollar/espsoftwareserial, which in turn is based on the Arduino software serial library for the ESP8266 found here https://github.com/plerup/espsoftwareserial
 
 The softserial from Jdollar could not be compile. Once that fixed it hang and paniced constant and was working very instable 
 on Sparkfun ESP32 Thing. Unfortunately one can not provide issues on the github and the code is now 2 years old.
