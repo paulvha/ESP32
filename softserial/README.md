@@ -15,6 +15,8 @@ A number of changes have been applied to make it work:
 
 . Added yield() for low baudrate in the wait during TX (taken from ESP8266)
 
+. extend default RX-buffer size from 64 to 128 bytes (there is enough RAM)
+
 MAKE SURE TO ADJUST the following in cores ESP.cpp. It must be set for IRAM_ATTR as it is called during
 interrupt:
 
