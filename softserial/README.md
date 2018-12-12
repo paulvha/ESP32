@@ -1,10 +1,11 @@
 Based on the softserial from https://github.com/jdollar/espsoftwareserial
 Which in turn is based on the SoftSerial from the ESP8266 and Arduino
 
-The softserial from Jdollar could not be compiled,and once that fixed it paniced constant and was working very instable 
+The softserial from Jdollar could not be compile. Once that fixed it hang and paniced constant and was working very instable 
 on Sparkfun ESP32 Thing. Unfortunately one can not provide issues on the github and the code is now 2 years old.
 
 A number of changes have been applied to make it work.
+. only enableRX after the speed is set to prevent "hang"
 . The disable of interrupts has been implemented that it really works on an ESP32 during RX and TX
 . The timing for bit-banging RX has been adjusted to be more accurate
 . The reset for GPIO detected interrups now works
