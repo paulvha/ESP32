@@ -1,7 +1,8 @@
+# EspSoftwareSerial version 1.0/ December 2018
+
 Based on the softserial from https://github.com/jdollar/espsoftwareserial, which in turn is based on the Arduino software serial library for the ESP8266 found here https://github.com/plerup/espsoftwareserial
 
-The softserial from Jdollar could not be compile. Once that fixed it hang and paniced constant and was working very instable 
-on Sparkfun ESP32 Thing. Unfortunately one can not provide issues on the github and the code is now 2 years old.
+The softserial from Jdollar could not be compile. Once that fixed it hang and paniced constant and was working very instable on Sparkfun ESP32 Thing. Unfortunately one can not provide issues on the github and the code is now 2 years old.
 
 A number of changes have been applied to make it work:
 
@@ -17,18 +18,14 @@ A number of changes have been applied to make it work:
 
 . extend default RX-buffer size from 64 to 128 bytes (there is enough RAM)
 
-MAKE SURE TO ADJUST the following in cores ESP.cpp. It must be set for IRAM_ATTR as it is called during
-interrupt:
+MAKE SURE TO ADJUST the following in cores ESP.cpp. It must be set for IRAM_ATTR as it is called during interrupt:
 
-line 103 uint32_t IRAM_ATTR EspClass::getCycleCount()   // is called from interrupt !
+line 103 uint32_t IRAM_ATTR EspClass::getCycleCount() // is called from interrupt !
 
-It now works OK-is, most of the time. But do not expect it to work above 56K (stretch already !!) 
+It now works OK-is, most of the time. But do not expect it to work above 56K (stretch already !!)
 
-It is still better to use any of the three serial interfaces, which are supported by a real uart. 
-The nice aspect is that the pins of each UART/Serial can be assigned to nearly all pins on the ESP32. 
-The pins 9 and 10, default for Serial1, on SparkFun ESP32 Thing are used for flash memory. 
-However as the pins can be assigned for Serial, one can still use Serial1 port bu then on other pins ( e.g. 25 and 26).
+It is still better to use any of the three serial interfaces, which are supported by a real uart. The nice aspect is that the pins of each UART/Serial can be assigned to nearly all pins on the ESP32. The pins 9 and 10, default for Serial1, on SparkFun ESP32 Thing are used for flash memory. However as the pins can be assigned for Serial, one can still use Serial1 port bu then on other pins ( e.g. 25 and 26).
 
-December 2018
-Paul van Haastrecht
+December 2018 Paul van Haastrecht
+
 
